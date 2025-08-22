@@ -3,18 +3,14 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-  // ========================
   // Clear old data
-  // ========================
   await prisma.order.deleteMany();
   await prisma.comment.deleteMany();
   await prisma.post.deleteMany();
   await prisma.product.deleteMany();
   await prisma.user.deleteMany();
 
-  // ========================
   // Create Users
-  // ========================
   const usersData = [
     { name: "hasbi", email: "hasbi@example.com" },
     { name: "anur", email: "anur@example.com" },
@@ -27,9 +23,7 @@ async function main() {
     users.push(user); // simpan user beserta id-nya
   }
 
-  // ========================
   // Create Products
-  // ========================
   const productsData = [
     { name: "Baju", price: 400_000, stock: 20 },
     { name: "Parfum", price: 700_000, stock: 30 },
@@ -44,9 +38,7 @@ async function main() {
     products.push(product);
   }
 
-  // ========================
   // Create Posts
-  // ========================
   const postsData = [
     { title: "Judul Post 1", content: "Isi Post 1", category: "Teknologi", authorIndex: 0 },
     { title: "Judul Post 2", content: "Isi Post 2", category: "Hiburan", authorIndex: 1 },
@@ -66,9 +58,8 @@ async function main() {
     posts.push(post); // simpan post beserta id-nya
   }
 
-  // ========================
+ 
   // Create Comments
-  // ========================
   const commentsData = [
     { postIndex: 0, content: "Komentar pertama untuk Post 1" },
     { postIndex: 0, content: "Komentar kedua untuk Post 1" },
@@ -86,9 +77,8 @@ async function main() {
     });
   }
 
-  // ========================
+
   // Create Orders
-  // ========================
   const ordersData = [
     { userIndex: 0, productIndex: 0, quantity: 2 },
     { userIndex: 0, productIndex: 1, quantity: 1 },
