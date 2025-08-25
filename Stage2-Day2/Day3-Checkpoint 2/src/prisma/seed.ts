@@ -15,6 +15,8 @@ async function main() {
     { name: "hasbi", email: "hasbi@example.com" },
     { name: "anur", email: "anur@example.com" },
     { name: "rudi", email: "rudi@example.com" },
+    { name: "riski", email: "riski@example.com" },
+    { name: "afut", email: "afut@example.com" }
   ];
 
   const users = [];
